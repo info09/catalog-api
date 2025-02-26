@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ProductCatalog.API\ProductCatalog.API.csproj" />
-    <ProjectReference Include="..\..\ProductCatalog.MigrationService\ProductCatalog.MigrationService.csproj" />
+    <ProjectReference Include="..\..\ProductCatalog.MigrationService\ProductCatalog.Api.MigrationService.csproj" />
   </ItemGroup>
 
 </Project>

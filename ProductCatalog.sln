@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.ServiceDefau
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.API", "ProductCatalog.API\ProductCatalog.API.csproj", "{C97FF397-C35E-494B-AAF9-0D1D61C17E3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.MigrationService", "ProductCatalog.MigrationService\ProductCatalog.MigrationService.csproj", "{53319809-F3F9-4199-9EF1-446F7F9C1F2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Api.MigrationService", "ProductCatalog.MigrationService\ProductCatalog.Api.MigrationService.csproj", "{53319809-F3F9-4199-9EF1-446F7F9C1F2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog.Infrastructure", "ProductCatalog.Infrastructure\ProductCatalog.Infrastructure.csproj", "{D6A249E7-1C68-419F-AD61-7CFCD4DEB3C5}"
 EndProject
