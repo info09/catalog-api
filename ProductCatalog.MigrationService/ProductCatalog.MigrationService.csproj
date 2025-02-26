@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-ProductCatalog.MigrationService-078eeba5-e297-4f05-82f9-d5d6e0236a04</UserSecretsId>
+    <UserSecretsId>dotnet-ProductCatalog.MigrationService-e97ceca8-1a40-4a3e-8dec-8955b28e1659</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

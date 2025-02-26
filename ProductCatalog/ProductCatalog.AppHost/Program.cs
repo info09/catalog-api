@@ -1,7 +1,20 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-builder.AddProject<Projects.ProductCatalog_MigrationService>("productcatalog-migrationservice");
+var postgres = builder.AddPostgres("postgres")
+    .WithImageTag("latest")
+    .WithVolume("catalog_data", "/var/lib/postgresql/data")
+    .WithLifetime(ContainerLifetime.Persistent)
+    .WithPgAdmin((rbuilder) => {
+        rbuilder
+            .WithImageTag("latest");
+    });
 
-builder.AddProject<Projects.ProductCatalog_API>("productcatalog-api");
+var catalogDb = postgres.AddDatabase("catalogdb", "catalog");
+
+var migrationService = builder.AddProject<Projects.ProductCatalog_MigrationService>("productcatalog-migrationservice");
+
+builder.AddProject<Projects.ProductCatalog_API>("productcatalog-api").WithReference(catalogDb).WaitFor(postgres).WaitForCompletion(migrationService);
+
+
 
 builder.Build().Run();
