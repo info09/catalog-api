@@ -10,6 +10,10 @@ namespace ProductCatalog.API
             CreateMap<Brand, Infrastructure.Entities.Brand>().ReverseMap();
             CreateMap<BrandCreate, Infrastructure.Entities.Brand>()
                 .ForMember(dst => dst.Id, opt => opt.MapFrom(src => Guid.CreateVersion7()));
+
+            CreateMap<Category, Infrastructure.Entities.Category>().ReverseMap();
+            CreateMap<CategoryCreate, Infrastructure.Entities.Category>()
+                .ForMember(dst => dst.Id, opt => opt.MapFrom(src => Guid.CreateVersion7()));
         }
     }
 }
