@@ -15,6 +15,9 @@ namespace ProductCatalog.API.Bootstraping
                 options.ReportApiVersions = true;
                 options.ApiVersionReader = ApiVersionReader.Combine(new UrlSegmentApiVersionReader(), new HeaderApiVersionReader("X-Version"));
             });
+
+            builder.Services.AddAutoMapper(typeof(ModelProfile));
+
             builder.AddNpgsqlDbContext<CatalogContext>("catalogdb", configureDbContextOptions: options =>
             {
                 options.UseNpgsql(builder => { });
