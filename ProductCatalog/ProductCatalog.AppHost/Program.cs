@@ -11,9 +11,9 @@ var postgres = builder.AddPostgres("postgres")
 
 var catalogDb = postgres.AddDatabase("catalogdb", "catalog");
 
-var migrationService = builder.AddProject<Projects.ProductCatalog_Api_MigrationService>("productcatalog-migrationservice");
+var migrationService = builder.AddProject<Projects.ProductCatalog_Api_MigrationService>("catalog-api-migrationservice").WithReference(catalogDb).WaitFor(catalogDb);
 
-builder.AddProject<Projects.ProductCatalog_API>("productcatalog-api").WithReference(catalogDb).WaitFor(postgres).WaitForCompletion(migrationService);
+builder.AddProject<Projects.ProductCatalog_API>("catalog-api").WithReference(catalogDb).WaitFor(postgres).WaitForCompletion(migrationService);
 
 
 
